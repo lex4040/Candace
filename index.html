@@ -197,30 +197,10 @@
 
       <!-- Ruled Sheet Rows -->
       <div id="sheet-rows" class="sheet-rows"></div>
-
-      <!-- Inline Quick-Add Line on the Sheet -->
-      <form id="quick-add-form" class="sheet-quick-add">
-        <span class="quick-add-plus" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-            <path d="M12 5v14M5 12h14" />
-          </svg>
-        </span>
-        <label for="quick-add-input" class="sr-only">Quickly add a daily habit</label>
-        <input
-          id="quick-add-input"
-          type="text"
-          class="quick-add-input"
-          placeholder="Write a new daily habit and press Enter..."
-          maxlength="72"
-          autocomplete="off"
-        />
-        <button type="submit" class="btn btn-ghost">Add line</button>
-      </form>
     </main>
 
-    <!-- Local Data Footer -->
+    <!-- Utility Footer -->
     <footer class="app-footer">
-      <span>Saved locally in your browser (<code>localStorage</code>) — works offline.</span>
       <div class="footer-actions">
         <button id="export-btn" type="button" class="link-btn">Export JSON</button>
         <button id="import-btn" type="button" class="link-btn">Import JSON</button>

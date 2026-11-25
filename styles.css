@@ -915,9 +915,9 @@ mark {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 16px;
   padding: 0 4px;
   font-size: 0.76rem;
   color: var(--ink-muted);
@@ -1149,14 +1149,22 @@ mark {
 @media (max-width: 430px) {
   .app-shell {
     max-width: 390px;
-    padding: max(12px, env(safe-area-inset-top))
+    padding: calc(env(safe-area-inset-top) + 22px)
       max(12px, env(safe-area-inset-right))
-      calc(86px + env(safe-area-inset-bottom))
+      calc(24px + env(safe-area-inset-bottom))
       max(12px, env(safe-area-inset-left));
   }
 
+  .search-kbd {
+    display: none !important;
+  }
+
+  .search-input {
+    padding-right: 36px;
+  }
+
   .top-bar {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .app-title {
@@ -1270,20 +1278,7 @@ mark {
     height: 38px;
   }
 
-  /* Thumb-reachable sticky Quick-Add bar above iPhone 13 34pt Home Indicator */
-  .sheet-quick-add {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 40;
-    padding: 10px 14px max(12px, env(safe-area-inset-bottom));
-    background-color: var(--sheet);
-    border-top: 1px solid var(--rule);
-    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.08);
-  }
-
   .toast {
-    bottom: calc(74px + env(safe-area-inset-bottom));
+    bottom: calc(20px + env(safe-area-inset-bottom));
   }
 }

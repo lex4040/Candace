@@ -247,8 +247,6 @@
     resultsSummary: document.getElementById('results-summary'),
     resetFiltersBtn: document.getElementById('reset-filters-btn'),
     sheetRows: document.getElementById('sheet-rows'),
-    quickAddForm: document.getElementById('quick-add-form'),
-    quickAddInput: document.getElementById('quick-add-input'),
     exportBtn: document.getElementById('export-btn'),
     importBtn: document.getElementById('import-btn'),
     importFile: document.getElementById('import-file'),
@@ -387,7 +385,7 @@
         total === 0
           ? `<div class="empty-sheet">
               <p class="empty-title">Your daily sheet is blank</p>
-              <p class="empty-desc">Type a habit in the quick-add line below or click New Habit to begin.</p>
+              <p class="empty-desc">Tap New Habit above to add your first daily habit.</p>
             </div>`
           : `<div class="empty-sheet">
               <p class="empty-title">No matching daily habits</p>
@@ -693,24 +691,6 @@
 
     saveHabits(state.habits);
     closeModal();
-    render();
-  });
-
-  // Inline quick-add line on the sheet
-  els.quickAddForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = els.quickAddInput.value.trim();
-    if (!name) return;
-    state.habits.push({
-      id: `hab_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
-      name: name.slice(0, 72),
-      note: '',
-      timeOfDay: state.timeOfDay !== 'all' ? state.timeOfDay : 'Anytime',
-      category: state.category !== 'all' ? state.category : 'Health',
-      completions: [],
-    });
-    els.quickAddInput.value = '';
-    saveHabits(state.habits);
     render();
   });
 
