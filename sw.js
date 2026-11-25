@@ -1,23 +1,23 @@
 /* ==========================================================================
    Candace Offline Service Worker
-   Cache-first strategy for 100% offline operation on iOS Safari & desktop.
+   Cache-first strategy with flat root paths for 100% offline iOS Safari use.
    ========================================================================== */
 
-const CACHE_NAME = 'candace-offline-v3';
+const CACHE_NAME = 'candace-offline-v4';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
-  './manifest.webmanifest',
-  './icons/favicon-32.png',
-  './icons/apple-touch-icon.png',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/splash-iphone13-portrait-light.png',
-  './icons/splash-iphone13-portrait-dark.png',
-  './icons/splash-iphone13-landscape-light.png',
-  './icons/splash-iphone13-landscape-dark.png',
+  './manifest.json',
+  './favicon-32.png',
+  './apple-touch-icon.png',
+  './icon-192.png',
+  './icon-512.png',
+  './splash-iphone13-portrait-light.png',
+  './splash-iphone13-portrait-dark.png',
+  './splash-iphone13-landscape-light.png',
+  './splash-iphone13-landscape-dark.png',
 ];
 
 self.addEventListener('install', (event) => {
